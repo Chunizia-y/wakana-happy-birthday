@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>謎解きチャレンジ</title>
+  <title>思い出の謎解き</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -249,8 +249,8 @@
 
   <!-- スタート画面 -->
   <div id="start-screen" class="screen active">
-    <div class="title">謎解きチャレンジ</div>
-    <div class="subtitle">全問正解を目指そう！</div>
+    <div class="title">思い出の謎解き</div>
+    <div class="subtitle">謎を解いて今日の目的地に向かおう！</div>
     <button class="btn btn-primary" onclick="startGame()">スタート</button>
     <button class="btn btn-secondary" onclick="showResumeScreen()">途中から</button>
   </div>
@@ -469,6 +469,7 @@
       var hints = HINTS[currentIndex];
       if (!hints) return;
       $hintBtn.classList.remove('visible');
+      $hamburgerBtn.classList.remove('visible');
       $hintList.innerHTML = '';
       for (var i = 0; i < hints.length; i++) {
         var li = document.createElement('li');
@@ -489,6 +490,7 @@
 
     function closeHintSelect() {
       $hintBtn.classList.toggle('visible', !!HINTS[currentIndex]);
+      updateHamburger();
       showScreen('puzzle-screen');
     }
 
