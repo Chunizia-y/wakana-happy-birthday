@@ -45,15 +45,8 @@
     }
 
     /* 問題画像 */
-    .progress {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-bottom: 16px;
-    }
-    .puzzle-image-wrapper {
-      width: 100%;
-      margin-bottom: 24px;
-    }
+    .progress { font-size: 0.9rem; color: #aaa; margin-bottom: 16px; }
+    .puzzle-image-wrapper { width: 100%; margin-bottom: 24px; }
     .puzzle-image-wrapper img {
       width: 100%;
       height: auto;
@@ -62,12 +55,7 @@
     }
 
     /* 回答エリア */
-    .answer-area {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .answer-area { width: 100%; display: flex; flex-direction: column; gap: 12px; }
     .answer-input {
       width: 100%;
       padding: 16px;
@@ -81,15 +69,8 @@
       transition: border-color 0.3s;
     }
     .answer-input:focus { border-color: #f5af19; }
-    .answer-input.shake {
-      animation: shake 0.4s ease;
-      border-color: #e74c3c;
-    }
-    .error-msg {
-      color: #e74c3c;
-      font-size: 0.9rem;
-      min-height: 1.4em;
-    }
+    .answer-input.shake { animation: shake 0.4s ease; border-color: #e74c3c; }
+    .error-msg { color: #e74c3c; font-size: 0.9rem; min-height: 1.4em; }
 
     /* ボタン */
     .btn {
@@ -103,16 +84,9 @@
       -webkit-tap-highlight-color: transparent;
     }
     .btn:active { transform: scale(0.96); opacity: 0.85; }
-    .btn-primary {
-      background: linear-gradient(135deg, #f5af19, #f12711);
-      color: #fff;
-    }
-    .btn-submit {
-      width: 100%;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-    }
-    .btn-back { background: #333; color: #eee; }
+    .btn-primary { background: linear-gradient(135deg, #f5af19, #f12711); color: #fff; }
+    .btn-submit { width: 100%; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+    .btn-secondary { background: #333; color: #eee; margin-top: 12px; }
 
     /* 正解オーバーレイ */
     .correct-overlay {
@@ -125,49 +99,26 @@
       z-index: 100;
     }
     .correct-overlay.show { display: flex; }
-    .correct-text {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #2ecc71;
-      animation: popIn 0.5s ease;
-    }
+    .correct-text { font-size: 3rem; font-weight: bold; color: #2ecc71; animation: popIn 0.5s ease; }
 
     /* クリア画面 */
-    #clear-screen .clear-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 16px;
-      animation: popIn 0.6s ease;
-    }
-    #clear-screen .clear-message {
-      font-size: 1.1rem;
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 40px;
-    }
+    #clear-screen .clear-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 16px; animation: popIn 0.6s ease; }
+    #clear-screen .clear-message { font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 40px; }
     .map-section { width: 100%; margin-bottom: 24px; }
-    .map-lead {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 12px;
-      color: #f5af19;
-    }
+    .map-lead { font-size: 1.2rem; font-weight: bold; margin-bottom: 12px; color: #f5af19; }
 
-    /* 紙吹雪 */
-    .confetti-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      overflow: hidden;
-    }
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      top: -10px;
-      animation: confettiFall linear forwards;
-    }
+    /* 指示画面 */
+    #direction-screen .direction-msg { font-size: 1.2rem; line-height: 2; margin-bottom: 40px; }
+
+    /* 途中から画面 */
+    #resume-screen .resume-msg { font-size: 1rem; color: #aaa; margin-bottom: 24px; line-height: 1.8; }
+
+    /* 振り返り画面 */
+    #review-screen .review-header { font-size: 1rem; color: #aaa; margin-bottom: 16px; }
+
+    /* 桜演出 */
+    .sakura-container { position: fixed; inset: 0; pointer-events: none; z-index: 50; overflow: hidden; }
+    .sakura { position: absolute; top: -40px; animation: sakuraFall linear forwards; }
 
     /* ハンバーガーメニュー */
     .hamburger-btn {
@@ -190,11 +141,8 @@
     }
     .hamburger-btn.visible { display: flex; }
     .hamburger-btn span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #eee;
-      border-radius: 2px;
+      display: block; width: 22px; height: 2px;
+      background: #eee; border-radius: 2px;
       transition: transform 0.3s, opacity 0.3s;
     }
     .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -203,62 +151,28 @@
 
     /* サイドドロワー */
     .drawer-overlay {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(0, 0, 0, 0.5);
-      z-index: 150;
-      opacity: 0;
-      pointer-events: none;
+      z-index: 150; opacity: 0; pointer-events: none;
       transition: opacity 0.3s;
     }
     .drawer-overlay.open { opacity: 1; pointer-events: auto; }
     .drawer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 280px;
-      max-width: 80%;
-      height: 100%;
-      background: #16213e;
-      z-index: 160;
+      position: fixed; top: 0; left: 0;
+      width: 280px; max-width: 80%; height: 100%;
+      background: #16213e; z-index: 160;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
-      overflow-y: auto;
-      padding: 72px 16px 24px;
+      overflow-y: auto; padding: 72px 16px 24px;
     }
     .drawer.open { transform: translateX(0); }
-    .drawer h2 {
-      font-size: 1rem;
-      color: #aaa;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #333;
-    }
-    .drawer-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .drawer-item {
-      padding: 12px 14px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      cursor: default;
-      color: #666;
-      background: #1a1a2e;
-    }
+    .drawer h2 { font-size: 1rem; color: #aaa; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #333; }
+    .drawer-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .drawer-item { padding: 12px 14px; border-radius: 10px; font-size: 0.95rem; cursor: default; color: #666; background: #1a1a2e; }
     .drawer-item.solved { color: #eee; cursor: pointer; transition: background 0.15s; }
     .drawer-item.solved:active { background: #2a2a4e; }
     .drawer-item .item-label { display: flex; align-items: center; gap: 8px; }
     .drawer-item .item-icon { font-size: 1.1rem; }
-
-    /* 振り返り画面 */
-    #review-screen .review-header {
-      font-size: 1rem;
-      color: #aaa;
-      margin-bottom: 16px;
-    }
 
     /* アニメーション */
     @keyframes shake {
@@ -273,9 +187,7 @@
       60% { transform: scale(1.2); }
       100% { transform: scale(1); opacity: 1; }
     }
-    @keyframes confettiFall {
-      to { top: 110%; transform: rotate(720deg); }
-    }
+    @keyframes sakuraFall { to { top: 110vh; transform: rotate(360deg) translateX(60px); } }
   </style>
 </head>
 <body>
@@ -297,6 +209,18 @@
     <div class="title">謎解きチャレンジ</div>
     <div class="subtitle">全問正解を目指そう！</div>
     <button class="btn btn-primary" onclick="startGame()">スタート</button>
+    <button class="btn btn-secondary" onclick="showResumeScreen()">途中から</button>
+  </div>
+
+  <!-- 途中から画面 -->
+  <div id="resume-screen" class="screen">
+    <div class="resume-msg">再開したい問題の<br>ひとつ前の答えを入力してください</div>
+    <div class="answer-area">
+      <input type="text" class="answer-input" id="resume-input" placeholder="答えを入力" autocomplete="off">
+      <div class="error-msg" id="resume-error"></div>
+      <button class="btn btn-submit" onclick="submitResume()">再開する</button>
+      <button class="btn btn-secondary" onclick="showScreen('start-screen')">戻る</button>
+    </div>
   </div>
 
   <!-- 問題画面 -->
@@ -312,6 +236,12 @@
     </div>
   </div>
 
+  <!-- 指示画面 -->
+  <div id="direction-screen" class="screen">
+    <div class="direction-msg" id="direction-msg"></div>
+    <button class="btn btn-primary" onclick="advanceToNext()">OK！</button>
+  </div>
+
   <!-- 正解オーバーレイ -->
   <div class="correct-overlay" id="correct-overlay">
     <div class="correct-text">&#x2B50; 正解！</div>
@@ -323,7 +253,7 @@
     <div class="puzzle-image-wrapper">
       <img id="review-image" src="" alt="問題画像">
     </div>
-    <button class="btn btn-back" onclick="closeReview()">戻る</button>
+    <button class="btn btn-secondary" onclick="closeReview()">戻る</button>
   </div>
 
   <!-- クリア画面 -->
@@ -341,7 +271,7 @@
     <button class="btn btn-primary" onclick="resetGame()">もう一度</button>
   </div>
 
-  <div class="confetti-container" id="confetti-container"></div>
+  <div class="sakura-container" id="sakura-container"></div>
 
   <script src="puzzles.js"></script>
   <script>
@@ -349,25 +279,31 @@
     var solvedSet = {};
     var isProcessing = false;
 
-    // DOM要素のキャッシュ
-    var $progress = document.getElementById('progress');
-    var $puzzleImage = document.getElementById('puzzle-image');
-    var $answerInput = document.getElementById('answer-input');
-    var $errorMsg = document.getElementById('error-msg');
-    var $hamburgerBtn = document.getElementById('hamburger-btn');
-    var $drawer = document.getElementById('drawer');
-    var $drawerOverlay = document.getElementById('drawer-overlay');
-    var $drawerList = document.getElementById('drawer-list');
-    var $correctOverlay = document.getElementById('correct-overlay');
-    var $reviewHeader = document.getElementById('review-header');
-    var $reviewImage = document.getElementById('review-image');
-    var $confettiContainer = document.getElementById('confetti-container');
+    // 問題間に挟む指示（afterPuzzle: 0始まりのインデックス）
+    var DIRECTION_MAP = { 0: '初めて手をつないだ日に\nデートした場所に向かって！' };
+
+    // DOM要素キャッシュ
+    var $ = document.getElementById.bind(document);
+    var $progress     = $('progress');
+    var $puzzleImage  = $('puzzle-image');
+    var $answerInput  = $('answer-input');
+    var $errorMsg     = $('error-msg');
+    var $hamburgerBtn = $('hamburger-btn');
+    var $drawer       = $('drawer');
+    var $drawerOverlay = $('drawer-overlay');
+    var $drawerList   = $('drawer-list');
+    var $correctOverlay = $('correct-overlay');
+    var $reviewHeader = $('review-header');
+    var $reviewImage  = $('review-image');
+    var $sakuraContainer = $('sakura-container');
+    var $resumeInput  = $('resume-input');
+    var $resumeError  = $('resume-error');
+    var $directionMsg = $('direction-msg');
 
     // --- ユーティリティ ---
 
     function normalizeAnswer(str) {
-      return str
-        .trim()
+      return str.trim()
         .replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(ch) {
           return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
         })
@@ -375,13 +311,36 @@
     }
 
     function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(function(s) {
-        s.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+      $(id).classList.add('active');
     }
 
-    // --- 問題読み込み ---
+    function shakeInput(inputEl, errorEl, msg) {
+      errorEl.textContent = msg;
+      inputEl.classList.remove('shake');
+      void inputEl.offsetWidth;
+      inputEl.classList.add('shake');
+    }
+
+    function resetState() {
+      currentIndex = 0;
+      solvedSet = {};
+      updateHamburger();
+    }
+
+    // --- ゲーム制御 ---
+
+    function startGame() {
+      resetState();
+      showScreen('puzzle-screen');
+      loadPuzzle();
+      $answerInput.focus();
+    }
+
+    function resetGame() {
+      resetState();
+      showScreen('start-screen');
+    }
 
     function loadPuzzle() {
       var puzzle = PUZZLES[currentIndex];
@@ -392,37 +351,26 @@
       $answerInput.classList.remove('shake');
     }
 
-    // --- ゲーム制御 ---
-
-    function startGame() {
-      currentIndex = 0;
-      solvedSet = {};
-      updateHamburger();
-      showScreen('puzzle-screen');
-      loadPuzzle();
-      $answerInput.focus();
-    }
-
-    function resetGame() {
-      currentIndex = 0;
-      solvedSet = {};
-      updateHamburger();
-      showScreen('start-screen');
+    function advanceToNext() {
+      if (currentIndex >= PUZZLES.length) {
+        showScreen('clear-screen');
+        launchSakura();
+      } else {
+        showScreen('puzzle-screen');
+        loadPuzzle();
+        $answerInput.focus();
+      }
     }
 
     function submitAnswer() {
       if (isProcessing) return;
-
       var userAnswer = normalizeAnswer($answerInput.value);
       if (userAnswer === '') return;
 
       if (userAnswer === normalizeAnswer(PUZZLES[currentIndex].answer)) {
         showCorrectEffect();
       } else {
-        $errorMsg.textContent = '不正解… もう一度考えてみよう！';
-        $answerInput.classList.remove('shake');
-        void $answerInput.offsetWidth;
-        $answerInput.classList.add('shake');
+        shakeInput($answerInput, $errorMsg, '不正解… もう一度考えてみよう！');
       }
     }
 
@@ -432,18 +380,46 @@
       updateHamburger();
       $correctOverlay.classList.add('show');
 
+      var directionMsg = DIRECTION_MAP[currentIndex];
+
       setTimeout(function() {
         $correctOverlay.classList.remove('show');
         currentIndex++;
         isProcessing = false;
-        if (currentIndex >= PUZZLES.length) {
-          showScreen('clear-screen');
-          launchConfetti();
+
+        if (directionMsg) {
+          $directionMsg.textContent = directionMsg;
+          showScreen('direction-screen');
         } else {
-          loadPuzzle();
-          $answerInput.focus();
+          advanceToNext();
         }
       }, 1200);
+    }
+
+    // --- 途中から再開 ---
+
+    function showResumeScreen() {
+      $resumeInput.value = '';
+      $resumeError.textContent = '';
+      showScreen('resume-screen');
+      $resumeInput.focus();
+    }
+
+    function submitResume() {
+      var userAnswer = normalizeAnswer($resumeInput.value);
+      if (userAnswer === '') return;
+
+      for (var i = 0; i < PUZZLES.length; i++) {
+        if (userAnswer === normalizeAnswer(PUZZLES[i].answer)) {
+          currentIndex = i + 1;
+          solvedSet = {};
+          for (var j = 0; j <= i; j++) solvedSet[j] = true;
+          updateHamburger();
+          advanceToNext();
+          return;
+        }
+      }
+      shakeInput($resumeInput, $resumeError, 'どの問題の答えとも一致しません');
     }
 
     // --- ハンバーガーメニュー / ドロワー ---
@@ -472,15 +448,13 @@
     function buildDrawerList() {
       $drawerList.innerHTML = '';
       for (var i = 0; i < PUZZLES.length; i++) {
-        var isSolved = !!solvedSet[i];
+        var solved = !!solvedSet[i];
         var li = document.createElement('li');
-        li.className = 'drawer-item' + (isSolved ? ' solved' : '');
+        li.className = 'drawer-item' + (solved ? ' solved' : '');
         li.innerHTML = '<div class="item-label">' +
-          '<span class="item-icon">' + (isSolved ? '\u2705' : '\uD83D\uDD12') + '</span>' +
+          '<span class="item-icon">' + (solved ? '\u2705' : '\uD83D\uDD12') + '</span>' +
           '<span>第 ' + (i + 1) + ' 問</span></div>';
-        if (isSolved) {
-          li.addEventListener('click', openReview.bind(null, i));
-        }
+        if (solved) li.addEventListener('click', openReview.bind(null, i));
         $drawerList.appendChild(li);
       }
     }
@@ -498,33 +472,28 @@
       showScreen(currentIndex >= PUZZLES.length ? 'clear-screen' : 'puzzle-screen');
     }
 
-    // --- 紙吹雪 ---
+    // --- 桜演出 ---
 
-    function launchConfetti() {
-      $confettiContainer.innerHTML = '';
-      var colors = ['#f5af19', '#f12711', '#2ecc71', '#3498db', '#9b59b6', '#e74c3c', '#1abc9c'];
-
-      for (var i = 0; i < 60; i++) {
+    function launchSakura() {
+      $sakuraContainer.innerHTML = '';
+      var petals = ['\uD83C\uDF38', '\uD83C\uDF3A', '\uD83C\uDF78'];
+      for (var i = 0; i < 40; i++) {
         var el = document.createElement('div');
-        el.className = 'confetti';
+        el.className = 'sakura';
+        el.textContent = petals[Math.floor(Math.random() * petals.length)];
         el.style.left = Math.random() * 100 + '%';
-        el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        el.style.width = (Math.random() * 8 + 6) + 'px';
-        el.style.height = (Math.random() * 8 + 6) + 'px';
-        el.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-        el.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        el.style.animationDelay = (Math.random() * 1.5) + 's';
-        $confettiContainer.appendChild(el);
+        el.style.fontSize = (Math.random() * 16 + 18) + 'px';
+        el.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        el.style.animationDelay = (Math.random() * 3) + 's';
+        $sakuraContainer.appendChild(el);
       }
-
-      setTimeout(function() { $confettiContainer.innerHTML = ''; }, 5000);
+      setTimeout(function() { $sakuraContainer.innerHTML = ''; }, 8000);
     }
 
     // --- イベント登録 ---
 
-    $answerInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') submitAnswer();
-    });
+    $answerInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitAnswer(); });
+    $resumeInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitResume(); });
   </script>
 </body>
 </html>
