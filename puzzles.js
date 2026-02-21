@@ -9,3 +9,13 @@ const PUZZLES = [
   { image: "image/puzzle6.png", answer: "富士山" },
   { image: "image/puzzle7.png", answer: "cruise" },
 ];
+
+// ヒント設定（puzzleIndex: 0始まり → 画像パスの配列）
+const HINTS = {
+  6: [
+    "image/hint1.png",
+    "image/hint2.png",
+    "image/hint3.png",
+    "image/hint4.png",
+  ]
+};
